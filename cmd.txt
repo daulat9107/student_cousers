@@ -1,0 +1,36 @@
+in your project dir run this commands
+git clone url inurture
+
+composer install
+
+npm install
+
+create database
+
+php artisan migrate
+
+cp .env.example .env
+
+open .env in your editor
+
+provide url, database name, smtp details and save file
+
+php artisan key:generate
+
+if your using homestead
+
+open Homestead.yaml file 
+provide site path
+
+open hosts file in your system 
+provide 
+ 
+ exit your Homestead
+ run: vagrant reload --provisison
+ than vagrant ssh
+ 
+and map your local domain with local ip address 
+
+open browser type inurtue.app:8000
+
+and we r done
