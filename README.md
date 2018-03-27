@@ -3,7 +3,7 @@
 
 ## Admin Login
 
-
+After running php artisan db:seed 
 ```
 Url      : http://yourdomain.com/login
 Username : admin@gmail.com
