@@ -3,6 +3,7 @@
 namespace Inurture\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Inurture\Course;
 use Inurture\Services\Api\Contracts\ApiServiceInterface;
 class HomeController extends Controller
 {
@@ -21,10 +22,23 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(ApiServiceInterface $api)
+    public function index(ApiServiceInterface $api,Course $db_courses)
     {
+            $db_courses=$db_courses->get()->toArray();
+        
           $api->connector('https://api.coursera.org/api/courses.v1');
           $courses=$api->parser();
+          $new_courses=[];
+        foreach ($courses as $key => $value) {
+            
+            foreach ($db_courses as $dbkey => $dbvalue) {
+                if($dbvalue['course_id']!=$value['id']){
+                    $new_courses[]=$value;
+                }
+            }
+        }
+        $courses=$new_courses;
           return view('home')->with(compact('courses'));
     }
+
 }

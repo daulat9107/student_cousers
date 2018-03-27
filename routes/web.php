@@ -11,11 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/course/store', 'CourseController@store');
+Route::get('/courses/view', 'CourseController@view');
+Route::get('/admin/dashboard', 'Admin\DashboardController@index');
+Route::get('/admin/students', 'Admin\DashboardController@courseWiseNumberOfStudents');

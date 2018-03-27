@@ -59,5 +59,6 @@ class Kernel extends HttpKernel
         'guest' => \Inurture\Http\Middleware\RedirectIfAuthenticated::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'admin.auth' =>  \Inurture\Http\Middleware\AdminAuth::class,
     ];
 }

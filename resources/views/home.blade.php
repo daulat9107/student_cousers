@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+<a href="/courses/view" target="_blank">View Courses</a>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -34,7 +34,7 @@
         <td><a href="#" class="save">Save</a></td>
       </tr>
     
-@endforeach;
+@endforeach
     </tbody>
   </table>
                
