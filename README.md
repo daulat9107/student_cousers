@@ -10,7 +10,7 @@ Username : admin@gmail.com
 Password : admin@123
 ```
 
-Don't forgot to run db:seen
+Don't forget to run db:seen
 * composer install
 * php artisan migrate
 * php artisan db:seed
